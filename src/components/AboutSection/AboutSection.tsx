@@ -6,7 +6,7 @@ import './AboutSection.css';
 export const AboutSection: React.FC = () => (
     <div className='about-section'>
 
-        <Link to={'/'} className="about-close hover-target" />
+        <Link to={'/'} className="about-close hover-target"/>
         <div className="section-center">
             <div className="container">
                 <div className="row justify-content-center">

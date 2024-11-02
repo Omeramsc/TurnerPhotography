@@ -1,15 +1,19 @@
-// PortfolioSection.tsx
 import React, { useState } from 'react';
-import './PortfolioSection.css';
+import {Link} from "react-router-dom";
 
+import './PortfolioSection.css';
 import { ModalComponent } from '../ModalComponent';
 
-export const PortfolioSection: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [activeImageIndex, setActiveImageIndex] = useState(0);
+interface PortfolioSectionProps {}
+
+export const PortfolioSection: React.FC<PortfolioSectionProps> = () => {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
     // Array of image paths
-    const images = Array.from({ length: 18 }, (_, index) => require(`../../assets/portfolio/thumbnails/${index + 1}.jpg`))
+    const images: string[] = Array.from({ length: 18 }, (_, index) =>
+        require(`../../assets/portfolio/thumbnails/${index + 1}.jpg`)
+    );
 
     const openModal = (index: number) => {
         setActiveImageIndex(index);
@@ -20,6 +24,7 @@ export const PortfolioSection: React.FC = () => {
 
     return (
         <div className="concert-section">
+            <Link to={'/'} className={'contact-close hover-target'}/>
             <div className="container">
                 <div className="row">
                     {images.map((image, index) => (
@@ -35,7 +40,7 @@ export const PortfolioSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* Pass images and activeImageIndex to ModalComponent */}
+            {/* Pass images, activeImageIndex, and closeModal to ModalComponent */}
             {isModalOpen && (
                 <ModalComponent
                     activeImageIndex={activeImageIndex}
