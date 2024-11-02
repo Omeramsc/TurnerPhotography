@@ -1,0 +1,73 @@
+/* ModalComponent.css */
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+}
+
+.modal-dialog {
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #1f2029;
+    color: white;
+    border-radius: 8px;
+}
+
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+    margin: 0 4px;
+}
+
+.carousel-indicator.active {
+    opacity: 1;
+}
+
+/* Close Button for Concert Section */
+.concert-close {
+    position: absolute;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../../assets/icn/bs-cl.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    cursor: pointer;
+    z-index: 11;
+    transition: transform 200ms linear;
+}
+
+.concert-close:hover {
+    transform: rotate(90deg);
+}
