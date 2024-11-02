@@ -11,9 +11,9 @@ import './App.css';
 const App: React.FC = () =>
 
     (
-        <Router>
+        <Router basename="/">
             <div className="App">
-                <Routes>
+                <Routes >
                     <Route path="/" element={<HeroSection/>}/>
                     <Route path="/about" element={<AboutSection/>}/>
                     <Route path="/contact" element={<ContactSection/>}/>
