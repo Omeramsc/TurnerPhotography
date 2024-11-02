@@ -1,46 +1,90 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Omer Amsalem - Live Photography Portfolio
 
-## Available Scripts
+Welcome to the official portfolio of **Omer Amsalem**, a passionate photographer dedicated to capturing the vibrant and raw energy of live performances.
 
-In the project directory, you can run:
+![Omer Amsalem Watermark](src/assets/main/watermark_white.png) <!-- Replace with actual path if available on GitHub -->
 
-### `npm start`
+## 🎬 About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This web application showcases a collection of **live photography** capturing unforgettable moments from concerts and performances. Designed to immerse viewers in the concert experience, the portfolio allows others to relive the atmosphere and exhilaration of each shot.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+[//]: # ()
+[//]: # (### 🖼️ Preview)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[//]: # ()
+[//]: # (Here are some snapshots from the site:)
 
-### `npm run build`
+[//]: # ()
+[//]: # (![Gallery Preview]&#40;path-to-screenshot&#41; <!-- Replace with an actual screenshot -->)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[//]: # ()
+[//]: # (---)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧭 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Responsive Gallery:** View all images in a sleek, modern grid that scales across devices.
+- **Interactive Carousel:** Click on any image to enter a full-screen carousel mode, providing a close-up, immersive experience.
+- **Smooth Page Transitions:** Navigate seamlessly between sections with animations that enhance the viewing experience.
+- **Direct Contact Links:** Easy access to connect via Instagram, Facebook, and email with accompanying social icons.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 Gallery & Carousel
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Each image in the portfolio can be viewed in a high-resolution carousel, bringing the details of each shot to life.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Social Media Integration**: Links to Omer's social profiles are provided for further engagement.
+- **Email Contact**: Reach out directly with a single click.
 
-## Learn More
+## 🚀 Technologies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React**: Core framework for building the interactive user interface.
+- **React Router**: For handling dynamic routing and page transitions.
+- **React-Bootstrap Carousel**: Smooth, responsive image carousel for displaying the photo gallery.
+- **CSS Animations**: Ensuring smooth transitions and animations throughout the site.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 How to Run Locally
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Omeramsc/TurnerPhotography.git
+   cd TurnerPhotography
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   yarn install
+   ```
+
+3. **Start the Application**:
+   ```bash
+   yarn start
+   ```
+
+4. **Access the Site**:
+   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## 📬 Contact
+
+For collaborations or inquiries, feel free to connect with me on social media:
+
+[![Instagram](https://raw.githubusercontent.com/CLorant/readme-social-icons/1a078b4b319beaa7fbcd202fa7fc1fc5d79d94d2/large/filled/instagram.svg)](https://www.instagram.com/omerams.live/) #omerams.live &nbsp;
+[![Facebook](https://raw.githubusercontent.com/CLorant/readme-social-icons/1a078b4b319beaa7fbcd202fa7fc1fc5d79d94d2/large/filled/facebook.svg)](https://www.facebook.com/ChibaMeta/) ChibaMeta
+
+Or reach out via email at [omeramsc@gmail.com](mailto:omeramsc@gmail.com).
+
+---
+
+## 🖋️ Acknowledgments
+
+This project is made possible by a deep love for live music and a commitment to capturing its energy through photography.
+
+---
+
