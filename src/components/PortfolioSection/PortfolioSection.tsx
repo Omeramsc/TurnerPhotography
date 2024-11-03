@@ -6,16 +6,13 @@ import {ModalComponent} from '../ModalComponent';
 interface PortfolioSectionProps {
     active: boolean
     removeIsActive: () => void
+    images: string[]
+    fullsizeImages: string[]
 }
 
-export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, removeIsActive}) => {
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, removeIsActive, images, fullsizeImages}) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
-
-    // Array of image paths
-    const images: string[] = Array.from({length: 18}, (_, index) =>
-        require(`../../assets/portfolio/thumbnails/${index + 1}.jpg`)
-    );
 
     const openModal = (index: number) => {
         setActiveImageIndex(index);
@@ -47,7 +44,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, remov
                 <ModalComponent
                     activeImageIndex={activeImageIndex}
                     closeModal={closeModal}
-                    images={images}
+                    images={fullsizeImages}
                 />
             )}
         </div>

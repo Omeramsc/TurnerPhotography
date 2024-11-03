@@ -6,11 +6,15 @@ import {Sections} from "../../types";
 
 interface HeroSectionProps {
     onNavigate: (section: Sections) => void;
+    backgroundImage: string
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({onNavigate}) =>
+export const HeroSection: React.FC<HeroSectionProps> = ({onNavigate, backgroundImage},) =>
     (
-        <div className="hero-section">
+        <div className="hero-section" style={{
+            backgroundImage: `linear-gradient(rgba(0, 11, 0, 0.4), rgba(50, 0, 0, 0.1)), url(${backgroundImage})`
+        }}       >
+                 
             <p>
                 <div className="about-text hover-target" onClick={() => onNavigate('about')}>
                     <span className="arrow">About</span>

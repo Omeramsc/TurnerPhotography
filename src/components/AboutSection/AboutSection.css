@@ -64,12 +64,17 @@
     width: fit-content;
 }
 
-.credit-text {
+.credit-text-about {
     font-size: 10px;
-    color: lightgray;
+    color: black;
     opacity: 0.7;
     text-align: start;
     left: 15px;
     bottom: 25px;
     position: relative;
+}
+
+.credit-text-about a {
+    color: black;
+    text-decoration: none;
 }
