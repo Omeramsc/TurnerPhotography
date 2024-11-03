@@ -12,12 +12,6 @@
     z-index: 10;
 }
 
-.App.about-on .about-section {
-    transform: translateX(0);
-    -webkit-transition-delay: 400ms;
-    transition-delay: 400ms;
-}
-
 .about-close {
     position: absolute;
     top: 20px;

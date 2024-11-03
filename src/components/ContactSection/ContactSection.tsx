@@ -2,18 +2,16 @@ import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-
 import './ContactSection.css';
 
 interface ContactSectionProps {
     active: boolean
     removeIsActive: () => void
-
 }
 
-export const ContactSection: React.FC<ContactSectionProps> = ({active,removeIsActive}) => (
+export const ContactSection: React.FC<ContactSectionProps> = ({active, removeIsActive}) => (
     <div className={`contact-section ${active ? "active" : ""}`}>
-        <div className="contact-close hover-target" onClick={removeIsActive} />
+        <div className="contact-close hover-target" onClick={removeIsActive}/>
         <div className="section-center">
             <div className="container">
                 <div className="row justify-content-center">
