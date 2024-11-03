@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import './HeroSection.css';
 
@@ -7,8 +7,17 @@ import './HeroSection.css';
 export const HeroSection: React.FC = () =>
     (
         <div className="hero-section">
-            <Link to={'/about'} className="about-text hover-target">about</Link>
-            <Link to={'/contact'} className="contact-text hover-target">contact</Link>
+            {/* Link to About */}
+            <p>
+                <Link to="/about" className="about-text hover-target">
+                    <span className="arrow">About</span>
+                </Link>
+            </p>
+            <p >
+                <Link to="/contact" className="contact-text hover-target">
+                    <span className="arrow">Contact</span>
+                </Link>
+            </p>
             <div className="section-center">
                 <div className="container-fluid">
                     <div className="row justify-content-center">
@@ -20,12 +29,12 @@ export const HeroSection: React.FC = () =>
                 </div>
             </div>
             <div className="fixed-bottom">
-                <Link to={'/portfolio'} className="col-11 col-md-12 text-center">
-                    <p className="pt-5">
-                        <span className="concert-text concert hover-target"
-                        >Portfolio</span>
-                    </p>
-                </Link>
+                <p className='col-11 col-md-12 text-center'>
+                    <Link to="/portfolio" className="concert-text concert hover-target">
+                        <span className="arrow-bottomå">Portfolio</span>
+                    </Link>
+                </p>
+
             </div>
         </div>
     )
