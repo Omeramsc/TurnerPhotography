@@ -7,7 +7,6 @@ const App: React.FC = () =>
     (
         <div className={`App`}>
             <PhotographyLanding/>
-
         </div>
     );
 
