@@ -12,12 +12,6 @@
     z-index: 10;
 }
 
-body.about-on .about-section {
-    transform: translateX(0);
-    -webkit-transition-delay: 400ms;
-    transition-delay: 400ms;
-}
-
 .about-close {
     position: absolute;
     top: 20px;
@@ -64,4 +58,18 @@ body.about-on .about-section {
     color: #866baf;
     font-size: 25px;
     font-weight: 400;
+}
+
+.image-section {
+    width: fit-content;
+}
+
+.credit-text {
+    font-size: 10px;
+    color: lightgray;
+    opacity: 0.7;
+    text-align: start;
+    left: 15px;
+    bottom: 25px;
+    position: relative;
 }

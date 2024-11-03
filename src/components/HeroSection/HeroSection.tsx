@@ -1,14 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './HeroSection.css';
+import {Sections} from "../../types";
 
 
-export const HeroSection: React.FC = () =>
+interface HeroSectionProps {
+    onNavigate: (section: Sections) => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({onNavigate}) =>
     (
         <div className="hero-section">
-            <Link to={'/about'} className="about-text hover-target">about</Link>
-            <Link to={'/contact'} className="contact-text hover-target">contact</Link>
+            <p>
+                <div className="about-text hover-target" onClick={() => onNavigate('about')}>
+                    <span className="arrow">About</span>
+                </div>
+            </p>
+            <p>
+                <div className="contact-text hover-target"
+                     onClick={() => onNavigate('contact')}>
+                    <span className="arrow">Contact</span>
+                </div>
+            </p>
             <div className="section-center">
                 <div className="container-fluid">
                     <div className="row justify-content-center">
@@ -20,12 +33,13 @@ export const HeroSection: React.FC = () =>
                 </div>
             </div>
             <div className="fixed-bottom">
-                <Link to={'/portfolio'} className="col-11 col-md-12 text-center">
-                    <p className="pt-5">
-                        <span className="concert-text concert hover-target"
-                        >Portfolio</span>
-                    </p>
-                </Link>
+                <p className='col-11 col-md-12 text-center'>
+                    <div className="concert-text concert hover-target"
+                         onClick={() => onNavigate('concert')}>
+                        <span className="arrow-bottomå">Portfolio</span>
+                    </div>
+                </p>
+
             </div>
         </div>
     )

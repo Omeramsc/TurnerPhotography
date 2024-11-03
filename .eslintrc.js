@@ -22,6 +22,7 @@ module.exports = {
     },
     plugins: ['react-refresh', '@typescript-eslint', 'prettier', 'import'],
     rules: {
+        'no-unused-vars':'off',
         'import/default': 'off',
         'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
         'import/no-unresolved': 'error',
