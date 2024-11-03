@@ -1,12 +1,15 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 import './AboutSection.css';
 
-export const AboutSection: React.FC = () => (
-    <div className='about-section'>
+interface AboutSectionProps {
+    active: boolean;
+    removeIsActive: () => void
+}
 
-        <Link to={'/'} className="about-close hover-target"/>
+export const AboutSection: React.FC<AboutSectionProps> = ({active, removeIsActive}) => (
+    <div className={`about-section ${active ? "active" : ""}`}>
+        <div className="about-close hover-target" onClick={removeIsActive}/>
         <div className="section-center">
             <div className="container">
                 <div className="row justify-content-center">

@@ -12,7 +12,7 @@
     z-index: 10;
 }
 
-body.about-on .about-section {
+.App.about-on .about-section {
     transform: translateX(0);
     -webkit-transition-delay: 400ms;
     transition-delay: 400ms;

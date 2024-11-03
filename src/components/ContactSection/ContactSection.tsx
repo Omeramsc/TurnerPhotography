@@ -1,13 +1,19 @@
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 import './ContactSection.css';
 
-export const ContactSection: React.FC = () => (
-    <div className="contact-section">
-        <Link to="/" className="contact-close hover-target" />
+interface ContactSectionProps {
+    active: boolean
+    removeIsActive: () => void
+
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({active,removeIsActive}) => (
+    <div className={`contact-section ${active ? "active" : ""}`}>
+        <div className="contact-close hover-target" onClick={removeIsActive} />
         <div className="section-center">
             <div className="container">
                 <div className="row justify-content-center">
@@ -15,7 +21,7 @@ export const ContactSection: React.FC = () => (
                         <img
                             src={require('../../assets/main/frame-sized.jpg')}
                             className="w-100 h-auto"
-                            style={{ maxWidth: '750px' }}
+                            style={{maxWidth: '750px'}}
                             alt="Contact"
                         />
                     </div>
@@ -25,10 +31,10 @@ export const ContactSection: React.FC = () => (
                 </div>
                 <div className="col-12 text-center mt-4 social">
                     <a href="https://www.instagram.com/omerams.live/" className="hover-target">
-                        <FontAwesomeIcon icon={faInstagram} className="mr-2" /> Instagram
+                        <FontAwesomeIcon icon={faInstagram} className="mr-2"/> Instagram
                     </a>
                     <a href="https://www.facebook.com/ChibaMeta/" className="hover-target">
-                        <FontAwesomeIcon icon={faFacebook} className="mr-2" /> Facebook
+                        <FontAwesomeIcon icon={faFacebook} className="mr-2"/> Facebook
                     </a>
                 </div>
             </div>
