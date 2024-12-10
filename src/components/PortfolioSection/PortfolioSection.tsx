@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './PortfolioSection.css';
 import {ModalComponent} from '../ModalComponent';
+
 
 interface PortfolioSectionProps {
     active: boolean
@@ -21,23 +22,37 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, remov
 
     const closeModal = () => setIsModalOpen(false);
 
+    
+    // Helper function to split array into chunks of 3
+    const chunkArray = (array:string[], size: number) => {
+        const result = [];
+        for (let i = 0; i < array.length; i += size) {
+            result.push(array.slice(i, i + size));
+        }
+        return result;
+    };
+
+    const imageChunks = chunkArray(images, 3);
+
     return (
         <div className={`concert-section ${active ? "active" : ""}`}>
             <div className={'contact-close hover-target'} onClick={removeIsActive}/>
-            <div className="container">
-                <div className="row">
-                    {images.map((image, index) => (
-                        <div key={index} onClick={() => openModal(index)} className="col-md-6 col-lg-4 p-2">
-                            <img
-                                src={image}
-                                className="portfolio-photo"
-                                alt={`Portfolio photo ${index + 1}`}
-                                loading="lazy"
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <ResponsiveMasonry
+                    columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
+                >
+                    <Masonry columnsCount={3} gutter="10px">
+                        {images.map((image, index) => (
+                            <div className='photo'>
+                                <img
+                                    src={image}
+                                    style={{width: "100%", display: "block"}}
+                                    alt={`Portfolio photo ${index + 1}`}
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </Masonry>
+                </ResponsiveMasonry>
 
             {/* Pass images, activeImageIndex, and closeModal to ModalComponent */}
             {isModalOpen && (
@@ -50,3 +65,5 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, remov
         </div>
     );
 };
+
+
