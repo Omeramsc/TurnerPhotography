@@ -47,11 +47,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         <div className={`concert-section ${active ? "active" : ""}`}>
             <div className={'contact-close'} onClick={removeIsActive}/>
             <ResponsiveMasonry
-                columnsCountBreakPoints={{350: 1, 900: 2}}
+                columnsCountBreakPoints={{350: 1,700:2, 900: 4}}
             >
                 <Masonry columnsCount={3} gutter="10px">
                     {images.map((image, index) => (
-                        <div className={`photo ${route === Routes.Concert ? `photo-${Routes.Concert}` : ''}`}
+                        <div className={`photo${route === Routes.Concert ? `photo-${Routes.Concert}` : ''}`}
                              onClick={() => openModal(index)}
                              key={index}
                         >

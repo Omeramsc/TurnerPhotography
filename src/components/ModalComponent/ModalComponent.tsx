@@ -31,7 +31,7 @@ export const ModalComponent: React.FC<ModalComponentProps> = ({
             backdropClassName="modal-overlay"
         >
             <Modal.Header>
-                <div className={'concert-close '} onClick={closeModal}/>
+                <div className={'concert-close'} onClick={closeModal}/>
             </Modal.Header>
             <Modal.Body>
                 <Carousel

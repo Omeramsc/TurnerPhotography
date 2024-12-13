@@ -5,7 +5,7 @@
     overflow: hidden;
     height: 100vh;
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     transform: scale(1) rotateX(0);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 300ms linear;
@@ -13,6 +13,19 @@
     -webkit-transition-delay: 400ms;
     transition-delay: 400ms;
     transform-origin: center top;
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        background-position: 47% 27%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-position: 47%;
+    }
 }
 
 .hero-section h1 {
