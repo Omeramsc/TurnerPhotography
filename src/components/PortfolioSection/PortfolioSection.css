@@ -131,8 +131,12 @@
     padding: 10px;
 }
 
+.photo:hover {
+    cursor: pointer;
+}
+
 /* Hover effect */
-.photo img:hover {
+.photo-concert img:hover {
     transform: scale(1.1);
 }
 

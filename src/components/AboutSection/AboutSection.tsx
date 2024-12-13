@@ -10,7 +10,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({active, removeIsActive, description}) => (
     <div className={`about-section ${active ? "active" : ""}`}>
-        <div className="about-close hover-target" onClick={removeIsActive}/>
+        <div className="about-close " onClick={removeIsActive}/>
         <div className="section-center">
             <div className="container">
                 <div className="row justify-content-center flex-column align-items-center">

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 import './PortfolioSection.css';
+import {Routes} from "../../types/Routes";
 import {ModalComponent} from '../ModalComponent';
 
 
@@ -10,9 +11,16 @@ interface PortfolioSectionProps {
     removeIsActive: () => void
     images: string[]
     fullsizeImages: string[]
+    route: Routes
 }
 
-export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, removeIsActive, images, fullsizeImages}) => {
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
+                                                                      active,
+                                                                      removeIsActive,
+                                                                      images,
+                                                                      fullsizeImages,
+                                                                      route = Routes.Cosplay
+                                                                  }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
@@ -37,16 +45,19 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, remov
 
     return (
         <div className={`concert-section ${active ? "active" : ""}`}>
-            <div className={'contact-close hover-target'} onClick={removeIsActive}/>
+            <div className={'contact-close'} onClick={removeIsActive}/>
             <ResponsiveMasonry
-                columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
+                columnsCountBreakPoints={{350: 1, 900: 2}}
             >
                 <Masonry columnsCount={3} gutter="10px">
                     {images.map((image, index) => (
-                        <div className='photo' onClick={() => openModal(index)}>
+                        <div className={`photo ${route === Routes.Concert ? `photo-${Routes.Concert}` : ''}`}
+                             onClick={() => openModal(index)}
+                             key={index}
+                        >
                             <img
                                 src={image}
-                                style={{width: "100%", display: "block", margin: "10px"}}
+                                style={{width: "100%", display: "block"}}
                                 alt={`Portfolio photo ${index + 1}`}
                                 loading="lazy"
                             />

@@ -16,12 +16,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({onNavigate, backgroundI
         }}       >
                  
             <p>
-                <div className="about-text hover-target" onClick={() => onNavigate('about')}>
+                <div className="about-text " onClick={() => onNavigate('about')}>
                     <span className="arrow">About</span>
                 </div>
             </p>
             <p>
-                <div className="contact-text hover-target"
+                <div className="contact-text "
                      onClick={() => onNavigate('contact')}>
                     <span className="arrow">Contact</span>
                 </div>
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({onNavigate, backgroundI
             </div>
             <div className="fixed-bottom">
                 <p className='col-11 col-md-12 text-center'>
-                    <div className="concert-text concert hover-target"
+                    <div className="concert-text concert "
                          onClick={() => onNavigate('concert')}>
                         <span className="arrow-bottomå">Portfolio</span>
                     </div>
