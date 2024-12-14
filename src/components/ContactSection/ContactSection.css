@@ -101,3 +101,8 @@ body.contact-on .contact-section {
     bottom:15px;
     position: relative;
 }
+
+.credit-text a {
+    color: white;
+    font-size: 10px;
+}

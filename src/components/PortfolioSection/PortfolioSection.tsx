@@ -1,21 +1,28 @@
 import React, {useState} from 'react';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 import './PortfolioSection.css';
+import {Routes} from "../../types/Routes";
 import {ModalComponent} from '../ModalComponent';
+
 
 interface PortfolioSectionProps {
     active: boolean
     removeIsActive: () => void
+    images: string[]
+    fullsizeImages: string[]
+    route: Routes
 }
 
-export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, removeIsActive}) => {
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
+                                                                      active,
+                                                                      removeIsActive,
+                                                                      images,
+                                                                      fullsizeImages,
+                                                                      route = Routes.Cosplay
+                                                                  }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
-
-    // Array of image paths
-    const images: string[] = Array.from({length: 18}, (_, index) =>
-        require(`../../assets/portfolio/thumbnails/${index + 1}.jpg`)
-    );
 
     const openModal = (index: number) => {
         setActiveImageIndex(index);
@@ -24,32 +31,51 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({active, remov
 
     const closeModal = () => setIsModalOpen(false);
 
+
+    // Helper function to split array into chunks of 3
+    const chunkArray = (array: string[], size: number) => {
+        const result = [];
+        for (let i = 0; i < array.length; i += size) {
+            result.push(array.slice(i, i + size));
+        }
+        return result;
+    };
+
+    const imageChunks = chunkArray(images, 3);
+
     return (
         <div className={`concert-section ${active ? "active" : ""}`}>
-            <div className={'contact-close hover-target'} onClick={removeIsActive}/>
-            <div className="container">
-                <div className="row">
+            <div className={'contact-close'} onClick={removeIsActive}/>
+            <ResponsiveMasonry
+                columnsCountBreakPoints={{350: 1,700:2, 900: 4}}
+            >
+                <Masonry columnsCount={3} gutter="10px">
                     {images.map((image, index) => (
-                        <div key={index} onClick={() => openModal(index)} className="col-md-6 col-lg-4 p-2">
+                        <div className={`photo${route === Routes.Concert ? `photo-${Routes.Concert}` : ''}`}
+                             onClick={() => openModal(index)}
+                             key={index}
+                        >
                             <img
                                 src={image}
-                                className="portfolio-photo"
+                                style={{width: "100%", display: "block"}}
                                 alt={`Portfolio photo ${index + 1}`}
                                 loading="lazy"
                             />
                         </div>
                     ))}
-                </div>
-            </div>
+                </Masonry>
+            </ResponsiveMasonry>
 
             {/* Pass images, activeImageIndex, and closeModal to ModalComponent */}
             {isModalOpen && (
                 <ModalComponent
                     activeImageIndex={activeImageIndex}
                     closeModal={closeModal}
-                    images={images}
+                    images={fullsizeImages}
                 />
             )}
         </div>
     );
 };
+
+

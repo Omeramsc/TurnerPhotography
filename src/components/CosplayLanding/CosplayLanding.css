@@ -1,0 +1,90 @@
+.landing-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 1s ease;
+}
+
+.hero-active .hero-section {
+    transform: scale(1) rotate(0);
+}
+
+.about-active .hero-section {
+    transform: translateX(45%);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+.about-active .about-section {
+    transform: translateX(0);
+    -webkit-transition-delay: 250ms;
+    transition-delay: 250ms;
+    opacity: 1;
+}
+
+.contact-active .hero-section {
+    transform: translateX(-45%);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+.contact-active .contact-section {
+    transform: translateX(0);
+    -webkit-transition-delay: 250ms;
+    transition-delay: 250ms;
+    opacity: 1;
+
+}
+
+.concert-active .hero-section {
+    transform: rotateX(-60deg);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+.concert-active .concert-section {
+    transform: translateX(0);
+    -webkit-transition-delay: 250ms;
+    transition-delay: 250ms;
+    opacity: 1;
+
+}
+
+/* Keyframes for the slide-in and fade */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about-section{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.8s ease-in-out;
+}
+
+.contact-section {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.8s ease-in-out;
+}
+
+.concert-section {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.8s ease-in-out;
+    width: 100vw;
+}
