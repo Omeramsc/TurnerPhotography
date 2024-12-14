@@ -13,7 +13,7 @@ immersive scenes. Step into a world where fiction breathes, allowing others to e
 
 const instagramPage: string = "chibameta"
 
-const backgroundImage = require('../../assets/main/mainpage-cosplay.jpg')
+const backgroundImage = require('../../assets/main/mainpage-cosplay2.jpg')
 
 
 export const cosplaydata = {
