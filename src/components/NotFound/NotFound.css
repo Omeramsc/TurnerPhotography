@@ -1,0 +1,44 @@
+/* src/components/NotFoundPage.css */
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+    position: relative;
+}
+
+.not-found-content {
+    position: relative;
+    z-index: 1;
+}
+
+.watermark img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1; /* Adjust opacity of the watermark */
+    width: 200px; /* Adjust the size of the watermark */
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
