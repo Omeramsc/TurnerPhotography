@@ -1,9 +1,9 @@
 // Array of image paths
-const images: string[] = Array.from({length: 12}, (_, index) =>
+const images: string[] = Array.from({length: 18}, (_, index) =>
     require(`../../assets/portfolio/cosplay/thumbnails/${index + 1}.jpg`)
 );
 
-const fullsizeImages: string[] = Array.from({length: 12}, (_, index) =>
+const fullsizeImages: string[] = Array.from({length: 18}, (_, index) =>
     require(`../../assets/portfolio/cosplay/${index + 1}.jpg`)
 );
 
