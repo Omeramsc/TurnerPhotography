@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./CosplayLanding.css";
 
-import {Sections} from "../../types";
-import {Routes} from "../../types/Routes";
-import {AboutSection} from "../AboutSection";
-import {ContactSection} from "../ContactSection";
-import {cosplaydata} from "../data/dataCosplay"
-import {HeroSection} from "../HeroSection";
-import {PortfolioSection} from "../PortfolioSection";
+import { Sections } from "../../types";
+import { Routes } from "../../types/Routes";
+import { AboutSection } from "../AboutSection";
+import { ContactSection } from "../ContactSection";
+import { cosplaydata } from "../data/dataCosplay"
+import { HeroSection } from "../HeroSection";
+import { PortfolioSection } from "../PortfolioSection";
 
 
 export const CosplayLanding = () => {
@@ -23,14 +23,14 @@ export const CosplayLanding = () => {
 
     return (
         <div className={`landing-container ${activeSection}-active`}>
-            <HeroSection onNavigate={handleSectionChange} backgroundImage={cosplaydata.backgroundImage}/>
+            <HeroSection onNavigate={handleSectionChange} backgroundImage={cosplaydata.backgroundImage} />
             <AboutSection active={activeSection === "about"} removeIsActive={handleRemoveSection}
-                          description={cosplaydata.description}/>
+                description={cosplaydata.description} />
             <ContactSection active={activeSection === "contact"} removeIsActive={handleRemoveSection}
-                            instagramPage={cosplaydata.instagramPage}/>
+                instagramPage={cosplaydata.instagramPage} />
             <PortfolioSection active={activeSection === "concert"} removeIsActive={handleRemoveSection}
-                              images={cosplaydata.images} fullsizeImages={cosplaydata.fullsizeImages}
-                              route={Routes.Cosplay}/>
+                images={cosplaydata.images} fullsizeImages={cosplaydata.fullsizeImages}
+                route={Routes.Cosplay} />
         </div>
     );
 };

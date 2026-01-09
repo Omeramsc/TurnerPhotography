@@ -52,6 +52,10 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+.about-section p {
+    white-space: pre-line;
+}
+
 .about-section p span {
     font-family: "Dancing Script", cursive;
     letter-spacing: 1px;
