@@ -4,6 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import './PortfolioSection.css';
 import { SocialLink } from '../../types';
 import { Routes } from "../../types/Routes";
+import { ModalComponent } from '../ModalComponent';
 
 
 interface PortfolioSectionProps {
