@@ -1,9 +1,9 @@
-const images: string[] = Array.from({ length: 18 }, (_, index) =>
+const images: string[] = Array.from({ length: 32 }, (_, index) =>
     require(`../../assets/portfolio/cosplay/thumbnails/${index + 1}.jpg`)
 );
 // const images: string[] = [require('../../assets/portfolio/cosplay/thumbnails/1.jpg')];
 
-const fullsizeImages: string[] = Array.from({ length: 18 }, (_, index) =>
+const fullsizeImages: string[] = Array.from({ length: 32 }, (_, index) =>
     require(`../../assets/portfolio/cosplay/${index + 1}.jpg`)
 );
 
