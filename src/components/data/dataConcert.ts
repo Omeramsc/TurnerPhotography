@@ -1,5 +1,5 @@
-import { SocialLink } from "../../types";
 import concertMetadata from "./concertMetadata.json";
+import { SocialLink } from "../../types";
 
 // Array of image paths
 const images: string[] = Array.from({length: 18}, (_, index) =>

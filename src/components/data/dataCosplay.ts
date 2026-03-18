@@ -1,5 +1,5 @@
-import { SocialLink } from "../../types";
 import cosplayMetadata from "./cosplayMetadata.json";
+import { SocialLink } from "../../types";
 
 const images: string[] = Array.from({ length: 32 }, (_, index) =>
     require(`../../assets/portfolio/cosplay/thumbnails/${index + 1}.jpg`)
