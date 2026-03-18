@@ -4,6 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import './PortfolioSection.css';
 import { Routes } from "../../types/Routes";
 import { ModalComponent } from '../ModalComponent';
+import { SocialLink } from '../../types';
 
 
 interface PortfolioSectionProps {
@@ -11,6 +12,8 @@ interface PortfolioSectionProps {
     removeIsActive: () => void
     images: string[]
     fullsizeImages: string[]
+    socialLinks?: SocialLink[]
+    socialLabel?: string
     route: Routes
 }
 
@@ -19,6 +22,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
     removeIsActive,
     images,
     fullsizeImages,
+    socialLinks,
+    socialLabel,
     route = Routes.Cosplay
 }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -45,7 +50,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
     return (
         <div className={`concert-section ${active ? "active" : ""}`}>
-            <div className={'contact-close'} onClick={removeIsActive} />
+            <div className={'concert-close'} onClick={removeIsActive} />
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 700: 2, 900: 4 }}
             >
@@ -72,6 +77,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
                     activeImageIndex={activeImageIndex}
                     closeModal={closeModal}
                     images={fullsizeImages}
+                    socialLinks={socialLinks}
+                    socialLabel={socialLabel}
                 />
             )}
         </div>

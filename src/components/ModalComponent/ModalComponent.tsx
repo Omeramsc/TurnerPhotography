@@ -3,17 +3,22 @@ import {Button, Modal} from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 
 import './ModalComponent.css';
+import { SocialLink } from '../../types';
 
 interface ModalComponentProps {
     images: string[];
     activeImageIndex: number;
     closeModal: () => void;
+    socialLinks?: SocialLink[];
+    socialLabel?: string;
 }
 
 export const ModalComponent: React.FC<ModalComponentProps> = ({
                                                                   images,
                                                                   activeImageIndex,
                                                                   closeModal,
+                                                                  socialLinks,
+                                                                  socialLabel = "Cosplayer",
                                                               }) => {
     const [index, setIndex] = useState<number>(activeImageIndex);
 
@@ -50,6 +55,19 @@ export const ModalComponent: React.FC<ModalComponentProps> = ({
                                 loading="lazy"
                                 style={{maxHeight: '80vh', objectFit: 'contain'}}
                             />
+                            {socialLinks && socialLinks[imgIndex] && socialLinks[imgIndex].name && (
+                                <div className="social-link-container">
+                                    <span className="social-label">{socialLabel}: </span>
+                                    <a
+                                        href={socialLinks[imgIndex].link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="cosplayer-social-link"
+                                    >
+                                        {socialLinks[imgIndex].name}
+                                    </a>
+                                </div>
+                            )}
                         </Carousel.Item>
                     ))}
                 </Carousel>

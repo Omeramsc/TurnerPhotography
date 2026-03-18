@@ -34,3 +34,35 @@
 .concert-close:hover {
     transform: rotate(90deg);
 }
+
+.social-link-container {
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(31, 32, 41, 0.8);
+    position: absolute;
+    bottom: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.social-label {
+    font-weight: 300;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.cosplayer-social-link {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.cosplayer-social-link:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #ffcc00;
+    text-decoration: none;
+}

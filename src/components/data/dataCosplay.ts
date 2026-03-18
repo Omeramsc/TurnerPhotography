@@ -1,3 +1,6 @@
+import { SocialLink } from "../../types";
+import cosplayMetadata from "./cosplayMetadata.json";
+
 const images: string[] = Array.from({ length: 32 }, (_, index) =>
     require(`../../assets/portfolio/cosplay/thumbnails/${index + 1}.jpg`)
 );
@@ -11,9 +14,16 @@ const description: string = "My photography journey began in 2010. I thrive on c
 
 const instagramPage: string = "chibameta"
 
-const backgroundImage = require('../../assets/main/mainpage-cosplay2.jpg')
+// Map each image index to its metadata if it exists
+const socialLinks: SocialLink[] = Array.from({ length: 32 }, (_, index) => {
+    const photoNumber = (index + 1).toString();
+    const meta = (cosplayMetadata as Record<string, SocialLink>)[photoNumber];
+    return meta || { name: "", link: "" };
+});
+
+const backgroundImage = require('../../assets/main/mainpage-cosplay2_optimized.webp')
 
 
 export const cosplaydata = {
-    images, fullsizeImages, description, instagramPage, backgroundImage
+    images, fullsizeImages, description, instagramPage, backgroundImage, socialLinks
 }

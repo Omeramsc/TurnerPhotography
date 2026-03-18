@@ -13,6 +13,7 @@ interface ContactSectionProps {
 export const ContactSection: React.FC<ContactSectionProps> = ({ active, removeIsActive, instagramPage }) => (
     <div className={`contact-section ${active ? "active" : ""}`}>
         <div className="contact-close " onClick={removeIsActive} />
+        <div className="contact-back-arrow " onClick={removeIsActive} />
         <div className="section-center">
             <div className="container d-flex flex-column justify-content-center align-content-center">
                 <div className="row justify-content-center align-content-center">

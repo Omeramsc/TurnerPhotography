@@ -33,12 +33,12 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     background-image: url("../../assets/icn/bs-cl.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 36px 36px;
+    background-size: 40px 40px;
     cursor: pointer;
     z-index: 11;
     transition: transform 200ms linear;
@@ -126,9 +126,15 @@
     height: auto;
     border-radius: 5px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     cursor: pointer;
     padding: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .photo img:hover {
+        transform: scale(1.05);
+    }
 }
 
 .photo:hover {

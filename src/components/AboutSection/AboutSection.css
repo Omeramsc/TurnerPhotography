@@ -15,19 +15,41 @@
 .about-close {
     position: absolute;
     top: 20px;
-    right: 20px;
-    width: 30px;
+    left: 20px;
+    width: 45px;
     display: block;
     overflow: hidden;
-    height: 30px;
+    height: 45px;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     background-image: url("../../assets/icn/bs-cl.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 36px 36px;
+    background-size: 40px 40px;
     cursor: pointer;
     z-index: 11;
+}
+
+.about-back-arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    transform: translateY(-50%) rotate(270deg);
+    background-image: url("../../assets/icn/bt-d.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+    cursor: pointer;
+    z-index: 11;
+    opacity: 0.3;
+    transition: all 200ms linear;
+}
+
+.about-back-arrow:hover {
+    opacity: 1;
+    right: 15px;
 }
 
 .about-close:hover {
@@ -44,8 +66,10 @@
 }
 
 .about-section img {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    max-width: 350px;
+    height: auto;
+    max-height: 35vh;
     border-radius: 4px;
     display: block;
     margin: 0 auto;
@@ -54,13 +78,15 @@
 
 .about-section p {
     white-space: pre-line;
+    font-size: clamp(14px, 2vh, 18px);
+    margin-bottom: 1rem;
 }
 
 .about-section p span {
     font-family: "Dancing Script", cursive;
     letter-spacing: 1px;
     color: #866baf;
-    font-size: 25px;
+    font-size: clamp(20px, 4vh, 32px);
     font-weight: 400;
 }
 
